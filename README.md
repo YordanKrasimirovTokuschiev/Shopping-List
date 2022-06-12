@@ -1,2 +1,2 @@
-# Shopping-List
+# Shopping-List-Spring Project
 Shopping List Application

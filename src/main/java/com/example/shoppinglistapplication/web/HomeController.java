@@ -1,5 +1,6 @@
 package com.example.shoppinglistapplication.web;
 
+import com.example.shoppinglistapplication.models.entities.CategoryName;
 import com.example.shoppinglistapplication.services.ProductService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,7 +25,10 @@ public class HomeController {
         }
 
         model.addAttribute("totalSum", productService.getTotalSum());
-       // model.addAttribute("drinks", productService.)
+        model.addAttribute("drinks", productService.findAllProductsByCategoryNAme(CategoryName.DRINK));
+        model.addAttribute("foods", productService.findAllProductsByCategoryNAme(CategoryName.FOOD));
+        model.addAttribute("households", productService.findAllProductsByCategoryNAme(CategoryName.HOUSEHOLD));
+        model.addAttribute("others", productService.findAllProductsByCategoryNAme(CategoryName.OTHER));
 
         return "home";
     }
